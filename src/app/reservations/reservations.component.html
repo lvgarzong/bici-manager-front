@@ -1,0 +1,31 @@
+<h1>Reserva tu Bicicleta</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Color</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Ubicación</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="finished_loading">
+      <tr *ngFor="let bike of bikeList">
+        <th scope="row">{{bike.id}}</th>
+        <td>{{bike.color}}</td>
+        <td>{{bike.tipo}}</td>
+        <td>{{bike.latitude}},{{bike.longitude}}</td>
+        <td>{{bike.idUser || 'N/A'}}</td>
+        <td >
+          <a>
+          <button type="button" [ngClass]="bike.estado === 'disponible' ? 'btn btn-lg btn-success' : 'btn btn-lg btn-danger'" [disabled]="(bike.estado !== 'disponible') && (bike.idUser !== user_id)" (click)="handleEvent(bike.id, bike.estado, bike.latitude, bike.longitude)">
+            {{bike.estado === 'disponible' ? 'Alquilar' : 'Devolver'}}
+          </button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

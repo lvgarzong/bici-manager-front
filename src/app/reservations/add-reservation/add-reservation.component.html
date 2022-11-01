@@ -1,0 +1,61 @@
+<a>
+  <button type="button" class="btn btn-info" (click)="goBack()"><i class="bi-arrow-left"></i> Volver</button>
+</a>
+<h3>Añadir reserva</h3>
+<div class="row">
+  <div class="col-xs-6">
+    <div *ngIf="!submitted">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="number" class="form-control" id="id" required [(ngModel)]="reservation.id" name="id" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="idBike">Id Bicicleta</label>
+            <input type="number" class="form-control" id="idBike" required [(ngModel)]="reservation.idBike"
+              name="idBike" />
+          </div>
+        </div>
+      </div>
+
+      <h2>Ubicación</h2>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="latitude">Latitud</label>
+            <input type="number" class="form-control" id="latitude" required [(ngModel)]="reservation.latitud"
+              name="latitude" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="longitude">Longitud</label>
+            <input type="number" class="form-control" id="longitude" required [(ngModel)]="reservation.longitud"
+              name="longitude" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            (click)="createReservation()"
+            class="btn btn-success">Reservar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

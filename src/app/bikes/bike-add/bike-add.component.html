@@ -1,0 +1,130 @@
+<a >
+  <button type="button" class="btn btn-info" (click)="goBack()"><i class="bi-arrow-left"></i> Volver</button>
+</a>
+<h3>Nueva Bicicleta</h3>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="submit-form">
+      <div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="id">Id</label>
+              <input
+              type="number"
+              class="form-control"
+              id="id"
+              required
+              [(ngModel)]="bike.id"
+              name="id"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="marca">Marca</label>
+              <input
+              class="form-control"
+              id="marca"
+              required
+              [(ngModel)]="bike.marca"
+              name="marca"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <label for="tipo">Tipo</label>
+            <select
+            class="form-control"
+            id="tipo"
+            required
+            [(ngModel)]="bike.tipo"
+            name="tipo">
+              <option value="Cross">Cross</option>
+              <option value="Mountain Bike">Mountain Bike</option>
+              <option value="Urbana">Urbana</option>
+              <option value="Ruta">Ruta</option>
+              <option value="Bmx">Bmx</option>
+              <option value="Plegable">Plegable</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input
+              class="form-control"
+              id="color"
+              required
+              [(ngModel)]="bike.color"
+              name="color"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <label for="estado">Estado</label>
+            <select
+            class="form-control"
+            id="estado"
+            required
+            [(ngModel)]="bike.estado"
+            name="estado">
+              <option value="disponible">Disponible</option>
+              <option value="reservada">Reservada</option>
+            </select>
+          </div>
+        </div>
+
+        <h2>Ubicación</h2>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="latitude">Latitud</label>
+              <input
+              type="number"
+              class="form-control"
+              id="latitude"
+              required
+              [(ngModel)]="bike.latitude"
+              name="latitude"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="longitude">Longitud</label>
+              <input
+              type="number"
+              class="form-control"
+              id="longitude"
+              required
+              [(ngModel)]="bike.longitude"
+              name="longitude"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" (click)="createBike()" class="btn btn-success">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

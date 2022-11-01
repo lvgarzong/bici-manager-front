@@ -1,0 +1,41 @@
+<h1>Bicicletas</h1>
+<a >
+  <button type="button" class="btn btn-primary" (click)="newBike()">Nueva Bici</button>
+</a>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Color</th>
+        <th scope="col">Ubicación</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Mostrar</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bike of bikeList">
+        <th scope="row">{{bike.id}}</th>
+        <td>{{bike.color}}</td>
+        <td>{{bike.latitude}},{{bike.longitude}}</td>
+        <td>{{bike.estado}}</td>
+        <td>
+          <a>
+            <button type="button" class="btn btn-primary" (click)="showBike(bike.id)">Mostrar</button>
+          </a>
+        </td>
+        <td>
+          <a>
+            <button type="button" class="btn btn-primary" (click)="editBike(bike.id)">Editar</button>
+          </a>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deleteBike(bike.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
